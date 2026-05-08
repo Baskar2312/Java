@@ -17,6 +17,6 @@ public class LongestHarmonious {
                 maxLen=Math.max(maxLen,currLen); 
             }
         }
-        return maxLen;
+        return maxLen; 
     }
 }
