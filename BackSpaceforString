@@ -1,0 +1,41 @@
+public class BackSpaceforString {
+    public static void main(String[] args) {
+        String s1="abc#d";
+        String s2="abzz##d";
+        BackSpaceforString solution = new BackSpaceforString();
+        System.out.println(solution.processString(s1,s2)); // Output: "abd"
+    }
+    
+    public String processString(String s1 , String s2) {
+        Stack<Character> stack1 = new Stack<>();
+        Stack<Character> stack2 = new Stack<>();
+        for (char c : s1.toCharArray()) {
+            if (c == '#') {
+                if (!stack1.isEmpty()) {
+                    stack1.pop();
+                }
+            } else {
+                stack1.push(c);
+            }
+        }
+        for (char c : s2.toCharArray()) {
+            if (c == '#') {
+                if (!stack2.isEmpty()) {
+                    stack2.pop();
+                }
+            } else {
+                stack2.push(c);
+            }
+        }
+        // Convert stacks to strings for comparison
+        StringBuilder result1 = new StringBuilder();
+        for (char c : stack1) {
+            result1.append(c);
+        }
+        StringBuilder result2 = new StringBuilder();
+        for (char c : stack2) {
+            result2.append(c);
+        }
+        return result1.toString().equals(result2.toString()) ? "Strings are equal after processing" : "Strings are not equal after processing";
+    }
+}
