@@ -3,7 +3,7 @@ import java.util.Queue;
 
 public class RottingOranges {
     public static void main(String[] args) {
-        int[][] grid = {{2,1,1},{1,1,0},{0,1,1}};
+        int[][] grid = {{2,1,0,2,1},{1,0,1,2,1},{1,0,0,2,15}};
         System.out.println(new RottingOranges().orangesRotting(grid));  
     }
     public int orangesRotting(int[][] grid) {
